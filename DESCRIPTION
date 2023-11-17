@@ -2,7 +2,7 @@ Package: STREAK
 Type: Package
 Title: Receptor Abundance Estimation using Feature Selection and Gene
         Set Scoring
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: c(person("H. Robert", "Frost", email = "hildreth.r.frost@dartmouth.edu", role = c("aut")),
     person("Azka", "Javaid", email = "azka.javaid.gr@dartmouth.edu", role = c("aut", "cre")))
 Maintainer: Azka Javaid <azka.javaid.gr@dartmouth.edu>
@@ -12,13 +12,13 @@ Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
 Imports: Ckmeans.1d.dp, Matrix, Seurat, SPECK, stats, VAM
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Depends: R (>= 2.10)
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-11-28 12:29:19 UTC; azkajavaid
+Packaged: 2023-11-17 20:31:39 UTC; azkajavaid
 Author: H. Robert Frost [aut],
   Azka Javaid [aut, cre]
 Repository: CRAN
-Date/Publication: 2022-11-29 10:30:05 UTC
+Date/Publication: 2023-11-17 21:10:02 UTC

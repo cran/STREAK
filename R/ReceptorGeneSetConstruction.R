@@ -43,9 +43,9 @@ receptorGeneSetConstruction <- function(train.rnaseq, train.citeseq, rank.range.
   message("Performing normalization and reduced rank reconstruction on training matrix.\n")
   counts.matrix.rrr.train <- randomizedRRR(counts.matrix = train.rnaseq, rank.range.end = rank.range.end, min.consec.diff = min.consec.diff, rep.consec.diff = rep.consec.diff, manual.rank = manual.rank, seed.rsvd = seed.rsvd)
   train.rnaseq.norm.rrr <- counts.matrix.rrr.train$rrr.mat
-  train.citeseq.object <- CreateSeuratObject(counts = t(as.matrix(train.citeseq)), assay = "ADT")
+  train.citeseq.object <- CreateSeuratObject(counts = Matrix(t(as.matrix(train.citeseq))), assay = "ADT")
   train.citeseq.norm <- NormalizeData(train.citeseq.object, normalization.method = "CLR", margin = 2)
-  train.citeseq.norm.mat <- t(as.matrix(train.citeseq.norm@assays$ADT@data))
+  train.citeseq.norm.mat <- t(as.matrix(train.citeseq.norm@assays$ADT@layers$data))
   message("Performing coexpression analysis.\n")
   receptor.geneset.matrix <- matrix(nrow = ncol(train.rnaseq.norm.rrr), ncol = ncol(train.citeseq.norm.mat))
   for (i in 1:ncol(train.citeseq.norm.mat)) {
